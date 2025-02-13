@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=950">
+    <title>TechCode Event: Parallax Scrolling Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div id="logo">TechCode</div>
+        <div class="menu">
+            <a href="#home" class="active">Home</a>
+            <a href="#view-event">View Event</a>
+            <a href="#registration">Registration</a>
+            <a href="#leaderboard">Leaderboard</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </header>
+    
+    <div class="parallax">
+        <div id="heading">
+            <i class="aurora-text">CODETECH.IO<br>2025</i>
+            <p class="created-by">Organized by SYCS</p>
+            <div class="buttons">
+                <a href="#view-event" class="btn explore-btn">Explore Event</a>
+                <a href="#registration" class="btn register-btn">Registration</a>
+            </div>
+        </div>
+        <div class="scroll-down">
+            <span>Scroll Down</span>
+            <div class="arrow"></div>
+        </div>
+        <img src="moon.png" alt="Moon" id="moon">
+        <img src="layer.png" alt="Mountain" id="mountain">
+        <img src="grass.png" alt="Grass" id="grass">
+    </div>
+
+    <!-- Sections for Each Navigation Item -->
+    <section id="home">
+        <section id="events">
+            <h2 class="section-title">Events</h2>
+            <div class="event-list">
+                <div class="event-card debugging">
+                    <h3>Debugging</h3>
+                    <p>Showcase your debugging skills and solve challenges.</p>
+                    <a href="#" class="event-btn" onclick="openModal('debugging-modal')">View Details</a>
+                </div>
+                <div class="event-card code-in-dark">
+                    <h3>Code in Dark</h3>
+                    <p>Test your coding skills with the screen turned off!</p>
+                    <a href="#" class="event-btn" onclick="openModal('code-in-dark-modal')">View Details</a>
+                </div>
+                <div class="event-card uiux">
+                    <h3>UI/UX Design</h3>
+                    <p>Create stunning UI/UX designs in a time-limited challenge.</p>
+                    <a href="#" class="event-btn" onclick="openModal('uiux-modal')">View Details</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modal Structures -->
+        <div id="debugging-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeModal('debugging-modal')">&times;</span>
+                <h2>Debugging Event</h2>
+                <p>Showcase your debugging skills and solve real-world challenges under a time constraint.</p>
+                <p><strong>Date:</strong> March 15, 2025</p>
+                <p><strong>Time:</strong> 10:00 AM - 12:00 PM</p>
+                <p><strong>Location:</strong> Room A101</p>
+            </div>
+        </div>
+        <div id="code-in-dark-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeModal('code-in-dark-modal')">&times;</span>
+                <h2>Code in Dark</h2>
+                <p>Write code with the screen turned off and test your skills under extreme conditions!</p>
+                <p><strong>Date:</strong> March 16, 2025</p>
+                <p><strong>Time:</strong> 2:00 PM - 4:00 PM</p>
+                <p><strong>Location:</strong> Lab B202</p>
+            </div>
+        </div>
+        <div id="uiux-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeModal('uiux-modal')">&times;</span>
+                <h2>UI/UX Design Challenge</h2>
+                <p>Create a visually stunning UI/UX design within a limited time.</p>
+                <p><strong>Date:</strong> March 17, 2025</p>
+                <p><strong>Time:</strong> 1:00 PM - 3:00 PM</p>
+                <p><strong>Location:</strong> Design Hall C303</p>
+            </div>
+        </div>
+    </section>
+        
+
+    <section id="view-event">
+        <h2>Event RULES</h2>
+        <div class="event-container">
+            <!-- Event 1: Code in Dark -->
+            <div class="event-name" onclick="toggleRule('rule1')">
+                <span>1. Code in Dark</span>
+            </div>
+            <div id="rule1" class="event-rule">
+                <p><strong>Rules for Code in Dark:</strong></p>
+                <ul>
+                    <li>Participants must write code in a dark-themed editor.</li>
+                    <li>No external plugins or themes are allowed.</li>
+                    <li>Code must be written in a single session without breaks.</li>
+                    <li>Submissions will be judged on functionality and creativity.</li>
+                </ul>
+            </div>
+    
+            <!-- Event 2: Debugging -->
+            <div class="event-name" onclick="toggleRule('rule2')">
+                <span>2. Debugging</span>
+            </div>
+            <div id="rule2" class="event-rule">
+                <p><strong>Rules for Debugging:</strong></p>
+                <ul>
+                    <li>Participants will be given a buggy code snippet.</li>
+                    <li>They must identify and fix all bugs within the given time.</li>
+                    <li>No external tools or debuggers are allowed.</li>
+                    <li>Submissions will be judged on accuracy and speed.</li>
+                </ul>
+            </div>
+    
+            <!-- Event 3: UI/UX -->
+            <div class="event-name" onclick="toggleRule('rule3')">
+                <span>3. UI/UX</span>
+            </div>
+            <div id="rule3" class="event-rule">
+                <p><strong>Rules for UI/UX:</strong></p>
+                <ul>
+                    <li>Participants must design a user-friendly interface for a given problem statement.</li>
+                    <li>Tools like Figma, Adobe XD, or Sketch can be used.</li>
+                    <li>Submissions must include wireframes and a brief explanation of the design.</li>
+                    <li>Judging criteria: usability, creativity, and adherence to the problem statement.</li>
+                </ul>
+            </div>
+        </div>
+        
+        
+    </section>
+
+    <section id="registration">
+        <h2>Registration</h2>
+        <div class="registration-container">
+            <h2>Event Registration</h2>
+            <form id="registration-form" action="https://api.web3forms.com/submit" method="POST">
+                <!-- Replace with your Access Key -->
+                <input type="hidden" name="access_key" value="f87d2809-b6f2-41dc-b87e-9ac33a696304">
+    
+                <!-- Student Name -->
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                </div>
+    
+                <!-- Student Email -->
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+    
+                <!-- Department -->
+                <div class="form-group">
+                    <label for="department">Department</label>
+                    <select id="department" name="department" required>
+                        <option value="" disabled selected>Select Department</option>
+                        <option value="IT">Information Technology (IT)</option>
+                        <option value="CS">Computer Science (CS)</option>
+                    </select>
+                </div>
+    
+                <!-- Year -->
+                <div class="form-group">
+                    <label for="year">Year</label>
+                    <select id="year" name="year" required>
+                        <option value="" disabled selected>Select Year</option>
+                        <option value="FY">First Year (FY)</option>
+                        <option value="SY">Second Year (SY)</option>
+                        <option value="TY">Third Year (TY)</option>
+                    </select>
+                </div>
+    
+                <!-- Event Selection -->
+                <div class="form-group">
+                    <label>Select Events</label>
+                    <div class="event-checkbox">
+                        <input type="checkbox" id="code-in-dark" name="event[]" value="Code in Dark">
+                        <label for="code-in-dark">Code in Dark</label>
+                    </div>
+                    <div class="event-checkbox">
+                        <input type="checkbox" id="debugging" name="event[]" value="Debugging">
+                        <label for="debugging">Debugging</label>
+                    </div>
+                    <div class="event-checkbox">
+                        <input type="checkbox" id="uiux" name="event[]" value="UI/UX Design">
+                        <label for="uiux">UI/UX Design</label>
+                    </div>
+                </div>
+    
+                <!-- Submit Button -->
+                <button type="submit" class="submit-btn">Register</button>
+            </form>
+        </div>
+        
+    </section>
+
+    <section id="leaderboard">
+        <h2>Leaderboard</h2>
+        <div class="leaderboard-container">
+            <h1>Event Leaderboard</h1>
+            <div class="categories">
+              <div class="category" id="code-in-dark">
+                <h2>Code in Dark</h2>
+                <ul class="winners-list"></ul>
+              </div>
+              <div class="category" id="debugging">
+                <h2>Debugging</h2>
+                <ul class="winners-list"></ul>
+              </div>
+              <div class="category" id="uiux">
+                <h2>UI/UX</h2>
+                <ul class="winners-list"></ul>
+              </div>
+            </div>
+          </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <!-- Contact Info -->
+      <div class="contact-info">
+        
+        <p>Have questions or need assistance? Reach out to us!</p>
+        <p><strong>Email:</strong> <a href="mailto:info@techevent.com">info@techevent.com</a></p>
+        <p><strong>Phone:</strong> +1 (123) 456-7890</p>
+        <p><strong>Address:</strong> 123 Tech Street, Innovation City, IC 12345</p>
+        <div class="social-links">
+          <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      <footer>
+        <div class="footer-content">
+          <!-- About Us Section -->
+          <div class="footer-section">
+            <h3>About Us</h3>
+            <p>We are a team of tech enthusiasts dedicated to bringing you the best tech event experience. Join us and be part of the innovation!</p>
+          </div>
+    
+          <!-- Team Members Section -->
+          <div class="footer-section">
+            <h3>Our Team</h3>
+            <div class="team-members">
+              
+                
+                <p>John Doe</p>
+              
+    
+                <p>Jane Smith</p>
+              
+                
+                <p>Alice Johnson</p>
+              
+                
+                <p>Bob Brown</p>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+          <p>&copy; 2025 Tech Event. All rights reserved. | Designed with ❤️ by <a href="#" target="_blank">Tech Event Team</a></p>
+        </div>
+      </footer>
+    </section>
+
+    <script>
+        const heading = document.getElementById("heading");
+        const moon = document.getElementById("moon");
+
+        // Smooth Scroll Functionality
+        document.querySelectorAll('.menu a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                targetSection.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        // Parallax Effect
+        window.addEventListener("scroll", () => {
+            let value = window.scrollY;
+            if (value <= 500) {
+                heading.style.marginTop = value * 2.5 + 'px';
+                moon.style.right = 20 + value * 0.1 + '%';
+            }
+        });
+
+        // Modal Functions
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = "flex";
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = "none";
+        }
+        document.getElementById('registration-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Get Form Data
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const department = document.getElementById('department').value;
+            const year = document.getElementById('year').value;
+            const events = [];
+            document.querySelectorAll('input[name="event[]"]:checked').forEach(event => {
+                events.push(event.value);
+            });
+
+            // Validate Events Selection
+            if (events.length === 0) {
+                alert('Please select at least one event.');
+                return;
+            }
+
+            // Display Registration Details
+            const message = `
+                Registration Successful!
+                Name: ${name}
+                Email: ${email}
+                Department: ${department}
+                Year: ${year}
+                Events: ${events.join(', ')}
+            `;
+            alert(message);
+
+            // Submit the form to Web3Forms
+            const form = document.getElementById('registration-form');
+            const formData = new FormData(form);
+
+            fetch(form.action, {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('Form submitted successfully!');
+                } else {
+                    alert('Form submission failed. Please try again.');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('An error occurred. Please try again.');
+            });
+
+            // Reset Form
+            form.reset();
+        });
+         // JavaScript Code
+    const winners = {
+      "code-in-dark": ["____"],
+      "debugging": ["____"],
+      "uiux": ["____"]
+    };
+
+    function populateWinners() {
+      for (const category in winners) {
+        const winnerList = document.querySelector(`#${category} .winners-list`);
+        winners[category].forEach(winner => {
+          const li = document.createElement("li");
+          li.textContent = winner;
+          winnerList.appendChild(li);
+        });
+      }
+    }
+
+    // Call the function to populate winners
+    populateWinners();
+
+    function toggleRule(ruleId) {
+            const rule = document.getElementById(ruleId);
+            const eventName = rule.previousElementSibling;
+
+            if (rule.style.display === 'none' || rule.style.display === '') {
+                rule.style.display = 'block';
+                eventName.classList.add('active'); // Add active class for arrow icon
+            } else {
+                rule.style.display = 'none';
+                eventName.classList.remove('active'); // Remove active class for arrow icon
+            }
+        }
+    </script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(to right, #0404f5, #03bbfe);
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 15px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            transition: 0.3s;
+        }
+
+        #logo {
+            font-size: 2em;
+            color: #fff;
+            user-select: none;
+            font-weight: 600;
+        }
+
+        .menu a {
+            font-size: 0.8em;
+            color: #fff;
+            font-weight: 500;
+            text-decoration: none;
+            margin-left: 20px;
+            letter-spacing: 1px;
+            padding: 6px 15px;
+            border-radius: 8px;
+            transition: 0.5s;
+        }
+
+        .menu a:hover,
+        a.active {
+            
+        }
+
+        .parallax {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url('images/background.jpg') no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        #heading {
+            position: absolute;
+            top: 20%;
+            font-size: 4em;
+            color: #fff;
+            text-shadow: 2px 4px 5px #232121;
+        }
+
+        .parallax img {
+            position: absolute;
+            width: 100%;
+            pointer-events: none;
+        }
+
+        .parallax img#moon {
+            width: 300px;
+            top: 40%;
+            right: 20%;
+        }
+
+        .parallax img#mountain {
+            position: fixed;
+            bottom: 0;
+        }
+
+        .parallax img#grass {
+            bottom: -40%;
+        }
+
+        section {
+            position: relative;
+            background-color: #020912;
+            padding: 30px 100px;
+            
+        }
+
+        h2 {
+            color: #fff;
+            font-size: 3em;
+            margin-bottom: 25px;
+        }
+
+        p {
+            color: #fff;
+            font-size: 1em;
+            font-weight: 300;
+        }
+
+        .scroll-down {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #fff;
+            font-size: 1.2em;
+            font-weight: 500;
+            text-align: center;
+            opacity: 0.8;
+            animation: fadeIn 2s infinite alternate;
+        }
+
+        .scroll-down .arrow {
+            width: 20px;
+            height: 20px;
+            border-right: 3px solid white;
+            border-bottom: 3px solid white;
+            transform: rotate(45deg);
+            margin: 5px auto;
+            animation: bounce 1.5s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0) rotate(45deg); }
+            50% { transform: translateY(10px) rotate(45deg); }
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+
+        .created-by {
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: #fff;
+            text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.5);
+            margin-top: 10px;
+            text-align: left;
+            margin-left: -50px;
+            opacity: 0.9;
+            animation: fadeIn 3s infinite alternate;
+        }
+
+        .buttons {
+            margin-top: 20px;
+            display: flex;
+            gap: 20px;
+        }
+
+        .btn {
+            font-size: 1.2rem;
+            font-weight: 500;
+            padding: 12px 24px;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: 0.3s ease-in-out;
+        }
+
+        .explore-btn {
+            background: #007bff;
+            color: white;
+        }
+
+        .explore-btn:hover {
+            background: #0056b3;
+        }
+
+        .register-btn {
+            background: #d63384;
+            color: white;
+        }
+
+        .register-btn:hover {
+            background: #b3005a;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            color: white;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .event-list {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .event-card {
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 20px;
+            width: 300px;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .event-card:hover {
+            transform: scale(1.05) rotate(1deg);
+            box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.3);
+        }
+
+        .event-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        .event-card p {
+            font-size: 1rem;
+            margin-bottom: 15px;
+        }
+
+        .event-btn {
+            display: inline-block;
+            background: #ff0055;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background 0.3s ease-in-out;
+        }
+
+        .event-btn:hover {
+            background: #cc0044;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background: #020912;
+            padding: 20px;
+            border-radius: 15px;
+            width: 80%;
+            max-width: 500px;
+            text-align: center;
+            position: relative;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 1.5rem;
+            color: white;
+            cursor: pointer;
+        }
+
+        .close-btn:hover {
+            color: #ff0055;
+        }
+
+        .modal h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .modal p {
+            font-size: 1rem;
+            margin-bottom: 10px;
+        }
+
+        .modal strong {
+            color: #ff0055;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 15px 20px;
+            }
+
+            #logo {
+                font-size: 1.5em;
+            }
+
+            .menu a {
+                font-size: 0.7em;
+                margin-left: 10px;
+                padding: 5px 10px;
+            }
+
+            #heading {
+                font-size: 2.5em;
+            }
+
+            .parallax img#moon {
+                width: 200px;
+                top: 30%;
+                right: 10%;
+            }
+
+            section {
+                padding: 20px;
+            }
+
+            h2 {
+                font-size: 2em;
+            }
+
+            .event-card {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+
+            .modal-content {
+                width: 90%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            #heading {
+                font-size: 2em;
+            }
+
+            .buttons {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .btn {
+                font-size: 1rem;
+                padding: 10px 20px;
+            }
+
+            .event-card h3 {
+                font-size: 1.5rem;
+            }
+
+            .event-card p {
+                font-size: 0.9rem;
+            }
+
+            .event-btn {
+                padding: 8px 16px;
+            }
+        }
+
+        
+
+
+        .registration-container {
+            background: linear-gradient(45deg, rgba(30, 185, 237, 0.49), rgba(56, 47, 176, 0.512));
+
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 15px;
+            width: 100%;
+            max-width: 1000px;
+            box-shadow: 0 4px 10px rgba(224, 39, 141, 0.2);
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.2);
+            color: #fff;
+            font-size: 1rem;
+        }
+
+        .form-group input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .form-group select {
+            appearance: none;
+            cursor: pointer;
+        }
+
+        .form-group select option {
+            background: #020912;
+            color: #fff;
+        }
+
+        .form-group .event-checkbox {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .form-group .event-checkbox input {
+            width: auto;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 12px;
+            background: #ff0055;
+            
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background: #0056b3;
+        }
+
+        @media (max-width: 480px) {
+            .registration-container {
+                padding: 20px;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .form-group input,
+            .form-group select {
+                font-size: 0.9rem;
+            }
+        }
+        .leaderboard-container {
+            background: linear-gradient(45deg, rgba(30, 185, 237, 0.49), rgba(56, 47, 176, 0.512));
+
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 15px;
+            width: 100%;
+            max-width: 1000px;
+            box-shadow: 0 4px 10px rgba(224, 39, 141, 0.2);
+        }
+
+    h1 {
+      text-align: center;
+      color: #ffcc00;
+    }
+
+    .categories {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .category {
+      background-color: #3a3a3a;
+      padding: 15px;
+      border-radius: 8px;
+    }
+
+    h2 {
+      color: #00ccff;
+      margin-bottom: 10px;
+    }
+
+    .winners-list {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .winners-list li {
+      background-color: #4a4a4a;
+      padding: 10px;
+      border-radius: 5px;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    .event-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .event-name {
+            padding: 20px;
+            background-color: #333; /* Darker background for event names */
+            color: #f4f4f4; /* Light text */
+            cursor: pointer;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            text-align: left;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            position: relative;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .event-name:hover {
+            background-color: #ff0055; /* Highlight on hover */
+            transform: translateX(10px); /* Slight movement on hover */
+        }
+
+        .event-name::after {
+            content: "▼"; /* Down caret symbol */
+            position: absolute;
+            right: 20px;
+            font-size: 16px;
+            transition: transform 0.3s ease;
+        }
+
+        .event-name.active::after {
+            content: "▲"; /* Up caret symbol when active */
+            transform: rotate(180deg);
+        }
+
+        .event-rule {
+            display: none;
+            padding: 20px;
+            background-color: #2d2d2d; /* Slightly lighter dark background for rules */
+            border: 1px solid #444;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            color: #f4f4f4; /* Light text */
+            animation: fadeIn 0.5s ease;
+        }
+
+        .event-rule p {
+            margin: 0 0 15px 0;
+        }
+
+        .event-rule ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        .event-rule ul li {
+            margin-bottom: 10px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .event-container {
+            animation: slideIn 0.8s ease;
+        }
+
+        .contact-info h2 {
+      color: #007BFF;
+      margin-bottom: 20px;
+      font-size: 1.8rem;
+    }
+    .contact-info p {
+      margin-bottom: 15px;
+      color: #555;
+    }
+    .contact-info .social-links {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+    }
+    .contact-info .social-links a {
+      color: #007BFF;
+      font-size: 1.5rem;
+      transition: color 0.3s ease;
+    }
+    .contact-info .social-links a:hover {
+      color: #0056b3;
+    }
+    /* Footer Styles */
+    footer {
+      background: #333;
+      color: #fff;
+      padding: 60px 20px 20px;
+      margin-top: auto;
+    }
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      justify-content: space-between;
+    }
+    .footer-section {
+      flex: 1;
+      min-width: 250px;
+    }
+    .footer-section h3 {
+      color: #007BFF;
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      position: relative;
+    }
+    .footer-section h3::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -10px;
+      width: 50px;
+      height: 3px;
+      background: #007BFF;
+    }
+    .footer-section p {
+      color: #ddd;
+      line-height: 1.6;
+    }
+    .team-members {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .team-member {
+      text-align: center;
+      flex: 1 1 150px;
+    }
+    .team-member img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 10px;
+      transition: transform 0.3s ease;
+    }
+    .team-member img:hover {
+      transform: scale(1.1);
+    }
+    .team-member p {
+      color: #ddd;
+      font-size: 0.9rem;
+    }
+    .footer-bottom {
+      text-align: center;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid #444;
+    }
+    .footer-bottom p {
+      margin: 0;
+      color: #ddd;
+    }
+    .footer-bottom a {
+      color: #007BFF;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    .footer-bottom a:hover {
+      color: #0056b3;
+    }
+    </style>
+</body>
+
+</html>
